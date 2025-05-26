@@ -1,5 +1,36 @@
 return {
     {
+        "navarasu/onedark.nvim",
+        config = function()
+            require("onedark").setup({
+                style = "dark",
+            })
+            require("onedark").load()
+        end,
+    },
+
+    {
+        "ray-x/lsp_signature.nvim",
+        event = "BufRead",
+        config = function()
+            require("lsp_signature").on_attach()
+        end,
+    },
+
+    {
+        "folke/trouble.nvim",
+        cmd = "TroubleToggle",
+    },
+
+    {
+        "stevearc/oil.nvim",
+        ---@module 'oil'
+        opts = {},
+        -- Optional dependencies
+        dependencies = { { "echasnovski/mini.icons", opts = {} } },
+    },
+
+    {
         "kndndrj/nvim-dbee",
         dependencies = {
             "MunifTanjim/nui.nvim",
